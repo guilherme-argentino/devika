@@ -1,8 +1,10 @@
 {
     "image": "mcr.microsoft.com/devcontainers/universal:2",
     "features": {
-        "ghcr.io/devcontainers/features/nvidia-cuda:1": {},
-        "ghcr.io/iterative/features/nvtop:1": {}
+        "ghcr.io/devcontainers/features/nvidia-cuda:1": {
+            "installNvtx": true,
+            "installToolkit": true
+        }
     },
     "hostRequirements": {
         "cpus": 4
