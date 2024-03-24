@@ -20,7 +20,9 @@ RUN echo $PATH
 # copy devika python engine only
 RUN $HOME/.cargo/bin/uv venv
 COPY requirements.txt /home/nonroot/devika/
-RUN $HOME/.cargo/bin/uv pip install -r requirements.txt 
+RUN $HOME/.cargo/bin/uv pip install -r requirements.txt \
+    && playwright install \
+    && python3 -m playwright install-deps
 
 COPY src /home/nonroot/devika/src
 COPY config.toml /home/nonroot/devika/
