@@ -19,7 +19,7 @@
 			"installTools": true,
 			"version": "latest"
 		},
-		"ghcr.io/michidk/devcontainers-features/bun:1": {}
+		"ghcr.io/shyim/devcontainers-features/bun:0": {}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
