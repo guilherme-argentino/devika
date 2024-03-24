@@ -15,6 +15,13 @@ services:
       start_period: 30s
     networks:
       - devika-subnetwork
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            device_ids: ['4']
+            capabilities: [gpu]
 
   devika-backend-engine:
     build:
