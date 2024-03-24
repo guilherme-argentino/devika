@@ -4,11 +4,13 @@ services:
   ollama-service:
     image: ollama/ollama:latest
     expose:
-      - 11434
+      - 21434
     ports:
-      - 11434:11434
+      - 21434:21434
+    environment:
+      - OLLAMA_HOST=0.0.0.0:21434
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:11434/ || exit 1"]
+      test: ["CMD-SHELL", "curl -f http://localhost:21434/ || exit 1"]
       interval: 5s
       timeout: 30s
       retries: 5
@@ -34,7 +36,7 @@ services:
     ports:
       - 1337:1337
     environment:
-      - OLLAMA_HOST=http://ollama-service:11434
+      - OLLAMA_HOST=http://ollama-service:21434
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://localhost:1337/ || exit 1"]
       interval: 5s
